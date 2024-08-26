@@ -1,14 +1,16 @@
 // src/components/Step.jsx
-
 import React, { useEffect, useState } from 'react';
+import StepGuide from '../../Guides/StepGuide';
 import StepFooter from './StepFooter';
 import StepHeader from './StepHeader';
 import styles from './StepItem.module.css'; // Импортируем стили как модуль
 
 const Step = ({ stepData, onEditStep, onDelete }) => {
+	const [element, setElement] = useState(null);
 	const [isContentVisible, setIsContentVisible] = useState(false);
 	const [isEditing, setIsEditing] = useState(false);
 	const [editedStepData, setEditedStepData] = useState(stepData);
+	const [showModal, setShowModal] = useState(false); // Состояние для модального окна
 
 	const {
 		id,
@@ -22,11 +24,10 @@ const Step = ({ stepData, onEditStep, onDelete }) => {
 		imageUrl,
 	} = editedStepData;
 
-	// Устанавливаем состояние imgChecked в зависимости от текущего состояния данных
 	useEffect(() => {
 		setEditedStepData(prevData => ({
 			...prevData,
-			imgChecked: imageUrl ? imgChecked : false, // Если нет изображения, сбрасываем состояние чекбокса
+			imgChecked: imageUrl ? imgChecked : false,
 		}));
 	}, [imageUrl, imgChecked]);
 
@@ -37,7 +38,6 @@ const Step = ({ stepData, onEditStep, onDelete }) => {
 	};
 
 	const handleEditClick = () => {
-		// Раскрываем шаг, если он свернут
 		if (!isContentVisible) {
 			setIsContentVisible(true);
 		}
@@ -50,8 +50,8 @@ const Step = ({ stepData, onEditStep, onDelete }) => {
 	};
 
 	const handleCancelClick = () => {
-		setEditedStepData(stepData); // Отменяем изменения
-		setIsEditing(false); // Выходим из режима редактирования
+		setEditedStepData(stepData);
+		setIsEditing(false);
 	};
 
 	const handleInputChange = e => {
@@ -68,9 +68,12 @@ const Step = ({ stepData, onEditStep, onDelete }) => {
 			imgChecked: !prevData.imgChecked,
 		}));
 	};
-	// Функция для выполнения шага и вывода элемента в консоль
+
 	const handleExecuteStep = () => {
+		// Показываем модальное окно при выполнении шага
 		let element = document.getElementById(elementId);
+
+		setElement(element);
 		console.log(element);
 
 		if (element) {
@@ -82,6 +85,17 @@ const Step = ({ stepData, onEditStep, onDelete }) => {
 		} else {
 			console.error('Element not found');
 		}
+		setShowModal(true);
+	};
+
+	const handleCloseModal = () => {
+		// Удаляем класс и сбрасываем стили при закрытии модального окна
+		if (element) {
+			element.classList.remove(styles.highlighted);
+			element.style.position = ''; // Сброс позиции к исходному состоянию
+		}
+
+		setShowModal(false);
 	};
 
 	return (
@@ -200,6 +214,9 @@ const Step = ({ stepData, onEditStep, onDelete }) => {
 						onCancel={handleCancelClick}
 						isEditing={isEditing}
 					/>
+					{showModal && (
+						<StepGuide element={element} onClose={handleCloseModal} />
+					)}
 				</>
 			)}
 		</div>

@@ -8,6 +8,7 @@ import StepCreator from './components/Steps/StepCreator';
 import StepItemList from './components/Steps/StepItemList'; // Импортируем новый компонент
 import StepsMockData from './data/StepsMockData';
 
+
 function App() {
 	const [isModalOpen, setModalOpen] = useState(false);
 	const [steps, setSteps] = useState(StepsMockData);
