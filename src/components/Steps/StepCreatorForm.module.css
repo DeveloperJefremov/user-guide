@@ -1,0 +1,73 @@
+.formContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.formContainer label {
+	margin-bottom: 15px; /* Отступ между элементами формы */
+}
+
+.input,
+.textarea {
+	width: calc(100% - 16px); /* Ширина поля ввода с учетом отступов */
+	padding: 10px;
+	margin-top: 4px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-sizing: border-box; /* Учитываем паддинги в ширину */
+}
+
+.textarea {
+	resize: vertical; /* Разрешаем изменение размера по вертикали */
+	height: 100px; /* Высота текстовой области */
+}
+
+.imgSizeControls {
+	display: flex;
+	gap: 10px; /* Отступ между полями ввода */
+	margin-top: 10px; /* Отступ сверху для разделения от чекбокса */
+}
+
+.imgSizeControls label {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0; /* Убираем отступ снизу для полей ввода ширины и высоты */
+}
+
+.imagePreview {
+	margin-top: 10px; /* Отступ сверху для изображения */
+}
+
+.buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+	margin-top: 20px; /* Отступ сверху для разделения от формы */
+}
+
+.cancelBtn,
+.saveBtn {
+	padding: 12px 24px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.cancelBtn {
+	background-color: #ccc;
+	color: #000;
+}
+
+.cancelBtn:hover {
+	background-color: #999;
+}
+
+.saveBtn {
+	background-color: #007bff;
+	color: #fff;
+}
+
+.saveBtn:hover {
+	background-color: #0056b3;
+}

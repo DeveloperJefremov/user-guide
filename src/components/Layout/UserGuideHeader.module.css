@@ -1,0 +1,38 @@
+.heading {
+	padding: 20px;
+	background-color: #f9f9f9;
+	border-bottom: 1px solid #ddd;
+}
+
+.heading h1 {
+	margin-top: 0;
+	font-size: 2rem;
+	color: #333;
+}
+
+.heading p {
+	margin-top: 10px;
+	font-size: 1rem;
+	color: #666;
+}
+
+.userGuideHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background-color: #f5f5f5;
+	border-bottom: 1px solid #ddd;
+}
+
+.headerInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+.headerInfo span {
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+

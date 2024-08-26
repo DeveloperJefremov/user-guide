@@ -1,0 +1,44 @@
+/* src/components/StepFooter.module.css */
+.stepFooter {
+	display: flex;
+	justify-content: flex-end; /* Кнопка сохраняется справа */
+	padding: 10px 20px;
+	background-color: #f4f4f4;
+	border-top: 1px solid #ddd;
+	/* Устанавливаем минимальную высоту футера */
+	min-height: 64px; /* Устанавливаем нужную высоту футера */
+	align-items: center; /* Центрируем элементы по вертикали */
+	box-sizing: border-box; /* Учитываем паддинг и бордер в высоте */
+}
+
+.saveBtn {
+	padding: 8px 16px;
+	font-size: 14px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease; /* Добавим плавный переход */
+}
+
+.saveBtn:hover {
+	background-color: #0056b3;
+}
+
+.cancelBtn {
+	padding: 8px 16px;
+	font-size: 14px;
+	background-color: #f4f4f4;
+	color: #333;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease; /* Добавим плавный переход */
+	margin-right: 10px; /* Отступ между кнопками */
+}
+
+.cancelBtn:hover {
+	background-color: #e0e0e0;
+	color: #000;
+}

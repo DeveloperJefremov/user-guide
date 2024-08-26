@@ -1,0 +1,43 @@
+/* src/components/UserGuideFooter.module.css */
+.userGuideFooter {
+	
+	background-color: #f4f4f4;
+	padding: 20px;
+	border-top: 1px solid #ddd;
+	display: flex;
+	flex-direction: column; /* Ориентация содержимого в столбец */
+	align-items: center; /* Центрируем содержимое */
+	justify-content: center; /* Вертикальное центрирование содержимого */
+	height: 100px; /* Фиксированная высота футера */
+	box-sizing: border-box; /* Включаем отступы и границы в общую высоту */
+}
+
+.footerContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.footerLinks a:hover {
+	text-decoration: underline;
+}
+
+.footerInfo {
+	text-align: center;
+	margin-bottom: 10px; /* Отступ снизу для разделения информации от слогана */
+}
+
+.footerInfo a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+.footerInfo a:hover {
+	text-decoration: underline;
+}
+
+.footerCardInfo {
+	text-align: center;
+	margin-bottom: 10px; /* Отступ снизу для разделения информации от слогана */
+}
