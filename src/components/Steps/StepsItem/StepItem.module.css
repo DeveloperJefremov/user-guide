@@ -46,3 +46,33 @@
 	max-width: 100%;
 	height: auto;
 }
+.executeButton {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 8px 12px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.executeButton:hover {
+	background-color: #45a049;
+}
+.highlighted::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 120%; /* Ширина чуть больше родительского элемента */
+	height: 130%; /* Высота чуть больше родительского элемента */
+	outline: 1px solid #ccc;
+
+	/* border: 2px solid beige; */
+	border-radius: 10px;
+	background-color: rgba(222, 225, 138, 0.5); /* Бежевый цвет с прозрачностью */
+	pointer-events: none; /* Чтобы подсветка не мешала кликам по элементу */
+	z-index: 10;
+	transform: translate(-50%, -50%); /* Центрируем по X и Y */
+}

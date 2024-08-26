@@ -68,6 +68,21 @@ const Step = ({ stepData, onEditStep, onDelete }) => {
 			imgChecked: !prevData.imgChecked,
 		}));
 	};
+	// Функция для выполнения шага и вывода элемента в консоль
+	const handleExecuteStep = () => {
+		let element = document.getElementById(elementId);
+		console.log(element);
+
+		if (element) {
+			// Убедимся, что элемент имеет относительное или абсолютное позиционирование
+			element.style.position = 'relative';
+
+			// Добавляем класс, который содержит стили для псевдоэлемента
+			element.classList.add(styles.highlighted);
+		} else {
+			console.error('Element not found');
+		}
+	};
 
 	return (
 		<div className={styles.step}>
@@ -177,6 +192,9 @@ const Step = ({ stepData, onEditStep, onDelete }) => {
 							)}
 						</div>
 					</section>
+					<button onClick={handleExecuteStep} className={styles.executeButton}>
+						Execute Step
+					</button>
 					<StepFooter
 						onSave={handleSaveClick}
 						onCancel={handleCancelClick}

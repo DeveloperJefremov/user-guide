@@ -10,7 +10,7 @@ import StepsMockData from './data/StepsMockData';
 
 function App() {
 	const [isModalOpen, setModalOpen] = useState(false);
-	const [steps, setSteps] = useState([]);
+	const [steps, setSteps] = useState(StepsMockData);
 
 	const openModal = () => setModalOpen(true);
 	const closeModal = () => setModalOpen(false);
@@ -63,7 +63,6 @@ function App() {
 						/>
 					</div>
 				</section>
-				
 			</main>
 			<UserGuideFooter className={styles.footerContainer}>
 				<p>
@@ -73,7 +72,6 @@ function App() {
 				<p>&copy; 2024 Your Company. All rights reserved.</p>
 			</UserGuideFooter>
 		</div>
-		
 	);
 }
 
